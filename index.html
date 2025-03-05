@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slum Treasures - Tourism</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-overlay">
+            <h1>It's a Big World, Go Explore! 🚀</h1>
+            <p>"Experience Kibera: Culture, Creativity, and Community Unveiled!"</p>
+            <button class="cta">Learn More</button>
+        </div>
+    </header>
+
+    <!-- Search & Filter -->
+    <section class="search-filter">
+        <input type="text" id="search" placeholder="Search destinations...">
+        <select id="filter">
+            <option value="all">All</option>
+            <option value="low">Art</option>
+            <option value="mid">Site</option>
+            <option value="high">Organisations</option>
+        </select>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section id="destinations" class="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="cards">
+            <div class="card" data-price="5000" data-category="low">
+                <img src="assets/coffee ministry.jpeg" alt="Coffee Minisrty">
+                <h3>Coffee Minisrty</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="card" data-price="7000" data-category="mid">
+                <img src="assets/kibera sunset.jpeg" alt="Kibera Sunset">
+                <h3>Kibera Sunset</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="card" data-price="10000" data-category="high">
+                <img src="assets/KICA.jpg" alt="Kibera Creative Art">
+                <h3>Kbera Creative Art</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card" data-price="5000" data-category="low">
+                <img src="assets/made in kibera.png" alt="Made In KIbera Studio">
+                <h3>Made In KIbera Studio</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="card" data-price="7000" data-category="mid">
+                <img src="assets/mtaa safi initiative.jpeg" alt="Mtaa Safi">
+                <h3>Mtaa Safi</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="card" data-price="10000" data-category="high">
+                <img src="assets/sisi_ni_mashujaa_2015_boamistura_11.jpg" alt="SISI NI MASHUJAA">
+                <h3>Mashujaa Painting</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card" data-price="5000" data-category="low">
+                <img src="assets/uweza art.jpeg" alt="Uweza art Gallarey">
+                <h3>Uweza Art Gallarey</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="card" data-price="7000" data-category="mid">
+                <img src="addis.jpg" alt="Addis City">
+                <h3>Addis City</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div class="card" data-price="10000" data-category="high">
+                <img src="gardens.jpg" alt="Garden City">
+                <h3>Garden City</h3>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <p class="price">Price: $<span id="modal-price"></span></p>
+            <input type="text" id="user-name" placeholder="Your Name">
+            <input type="email" id="user-email" placeholder="Your Email">
+            <button class="confirm-booking">Confirm Booking</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Slum Treasures. All Rights Reserved.</p>
+        <!-- Moved Navigation Bar to Footer -->
+        <nav class="navbar">
+            <h2>Slum Treasures</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Discover</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
