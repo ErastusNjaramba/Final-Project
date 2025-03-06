@@ -3,113 +3,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slum Treasures - Tourism</title>
+    <title>Slum Treasures - Discover Kibera's Hidden Gems</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-overlay">
-            <h1>It's a Big World, Go Explore! 🚀</h1>
-            <p>"Experience Kibera: Culture, Creativity, and Community Unveiled!"</p>
-            <button class="cta">Learn More</button>
-        </div>
-    </header>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Slum Treasures</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tours">Tours</a></li>
+            <li><a href="#guides">Our Guides</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Search & Filter -->
-    <section class="search-filter">
-        <input type="text" id="search" placeholder="Search destinations...">
-        <select id="filter">
-            <option value="all">All</option>
-            <option value="low">Art</option>
-            <option value="mid">Site</option>
-            <option value="high">Organisations</option>
-        </select>
-    </section>
-
-    <!-- Popular Destinations -->
-    <section id="destinations" class="destinations">
-        <h2>Popular Destinations</h2>
-        <div class="cards">
-            <div class="card" data-price="5000" data-category="low">
-                <img src="assets/coffee ministry.jpeg" alt="Coffee Minisrty">
-                <h3>Coffee Minisrty</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-            <div class="card" data-price="7000" data-category="mid">
-                <img src="assets/kibera sunset.jpeg" alt="Kibera Sunset">
-                <h3>Kibera Sunset</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-            <div class="card" data-price="10000" data-category="high">
-                <img src="assets/KICA.jpg" alt="Kibera Creative Art">
-                <h3>Kbera Creative Art</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-        </div>
-        <div class="cards">
-            <div class="card" data-price="5000" data-category="low">
-                <img src="assets/made in kibera.png" alt="Made In KIbera Studio">
-                <h3>Made In KIbera Studio</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-            <div class="card" data-price="7000" data-category="mid">
-                <img src="assets/mtaa safi initiative.jpeg" alt="Mtaa Safi">
-                <h3>Mtaa Safi</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-            <div class="card" data-price="10000" data-category="high">
-                <img src="assets/sisi_ni_mashujaa_2015_boamistura_11.jpg" alt="SISI NI MASHUJAA">
-                <h3>Mashujaa Painting</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-        </div>
-        <div class="cards">
-            <div class="card" data-price="5000" data-category="low">
-                <img src="assets/uweza art.jpeg" alt="Uweza art Gallarey">
-                <h3>Uweza Art Gallarey</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-            <div class="card" data-price="7000" data-category="mid">
-                <img src="assets/Kibera fassion week.jpg" alt="Kibera Fassion week">
-                <h3>Kibera Fassion Week</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
-            <div class="card" data-price="10000" data-category="high">
-                <img src="assets/Tunapanda Institute.jpg" alt="Garden City">
-                <h3>Tunapanda Institute</h3>
-                <button class="book-btn">Book Now</button>
-            </div>
+    <!-- Hero Section with YouTube Video -->
+    <section id="home" class="hero">
+        <iframe class="hero-video" src="https://www.youtube.com/embed/n5eaLF9UWNQ?autoplay=1&mute=1&loop=1&playlist=n5eaLF9UWNQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="hero-content">
+            <h1>Discover Kibera's Hidden Treasures</h1>
+            <p>Experience the vibrant culture and resilience of one of Africa's largest slums with local guides.</p>
+            <a href="#tours" class="cta-button">Book a Tour Now</a>
         </div>
     </section>
 
-    <!-- Booking Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <img id="modal-img" src="" alt="">
-            <h3 id="modal-title"></h3>
-            <p id="modal-description"></p>
-            <p class="price">Price: $<span id="modal-price"></span></p>
-            <input type="text" id="user-name" placeholder="Your Name">
-            <input type="email" id="user-email" placeholder="Your Email">
-            <button class="confirm-booking">Confirm Booking</button>
+    <!-- Tours Section -->
+    <section id="tours" class="tours-section">
+        <h2>Our Tours</h2>
+        <div class="card-container">
+            <div class="card-row">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Cultural Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Cultural Immersion Tour</h3>
+                        <p>Discover the traditions, music, and art of Kibera's residents.</p>
+                        <div class="price">$50.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5000" data-product="Cultural Immersion Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Community Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Community Engagement Tour</h3>
+                        <p>Meet local leaders and learn about community projects.</p>
+                        <div class="price">$45.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="4500" data-product="Community Engagement Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Food Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kibera Food Tour</h3>
+                        <p>Taste authentic Kenyan street food with locals.</p>
+                        <div class="price">$40.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="4000" data-product="Kibera Food Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Art Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Street Art Tour</h3>
+                        <p>Explore vibrant murals and street art in Kibera.</p>
+                        <div class="price">$55.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5500" data-product="Street Art Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="History Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>History of Kibera Tour</h3>
+                        <p>Learn about the origins and evolution of Kibera.</p>
+                        <div class="price">$60.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="6000" data-product="History of Kibera Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Kids Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kids in Kibera Tour</h3>
+                        <p>Visit schools and interact with Kibera's youth.</p>
+                        <div class="price">$35.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="3500" data-product="Kids in Kibera Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Market Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kibera Market Tour</h3>
+                        <p>Shop at bustling local markets with a guide.</p>
+                        <div class="price">$50.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5000" data-product="Kibera Market Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Photography Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Photography Tour</h3>
+                        <p>Capture the beauty of Kibera through your lens.</p>
+                        <div class="price">$70.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="7000" data-product="Photography Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 9 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Music Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Music and Dance Tour</h3>
+                        <p>Experience live performances and dance with locals.</p>
+                        <div class="price">$65.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="6500" data-product="Music and Dance Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Craft Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Local Crafts Tour</h3>
+                        <p>Meet artisans and see traditional crafts in action.</p>
+                        <div class="price">$45.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="4500" data-product="Local Crafts Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 11 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Sports Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sports in Kibera Tour</h3>
+                        <p>Watch local sports events and meet athletes.</p>
+                        <div class="price">$40.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="4000" data-product="Sports in Kibera Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 12 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Night Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Kibera by Night Tour</h3>
+                        <p>Explore the nightlife and evening culture of Kibera.</p>
+                        <div class="price">$60.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="6000" data-product="Kibera by Night Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 13 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="NGO Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>NGO Impact Tour</h3>
+                        <p>Visit NGOs making a difference in Kibera.</p>
+                        <div class="price">$55.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5500" data-product="NGO Impact Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 14 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Health Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Healthcare in Kibera Tour</h3>
+                        <p>Learn about healthcare challenges and solutions.</p>
+                        <div class="price">$50.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5000" data-product="Healthcare in Kibera Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 15 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Education Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Education Initiatives Tour</h3>
+                        <p>Visit educational programs supporting Kibera's youth.</p>
+                        <div class="price">$45.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="4500" data-product="Education Initiatives Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 16 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Women Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Women's Empowerment Tour</h3>
+                        <p>Meet women leading change in Kibera.</p>
+                        <div class="price">$55.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5500" data-product="Women's Empowerment Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 17 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Tech Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Tech in Kibera Tour</h3>
+                        <p>Discover tech innovations by Kibera's youth.</p>
+                        <div class="price">$60.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="6000" data-product="Tech in Kibera Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 18 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Eco Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Eco-Friendly Kibera Tour</h3>
+                        <p>Learn about sustainability efforts in Kibera.</p>
+                        <div class="price">$50.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5000" data-product="Eco-Friendly Kibera Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 19 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Youth Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Youth Innovation Tour</h3>
+                        <p>Meet young entrepreneurs shaping Kibera's future.</p>
+                        <div class="price">$55.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="5500" data-product="Youth Innovation Tour">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 20 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/200x200" alt="Full Day Tour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Full Day Kibera Experience</h3>
+                        <p>A comprehensive tour covering all aspects of Kibera.</p>
+                        <div class="price">$100.00</div>
+                        <div class="card-buttons">
+                            <button class="book-now" data-amount="10000" data-product="Full Day Kibera Experience">Book Now</button>
+                            <a href="#" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>© 2025 Slum Treasures. All Rights Reserved.</p>
-        <!-- Moved Navigation Bar to Footer -->
-        <nav class="navbar">
-            <h2>Slum Treasures</h2>
-            <ul>
-                <li><a href="#home">Home</a></li>
-            </ul>
-        </nav>
+    <!-- Tour Guides Section -->
+    <section id="guides" class="guides-section">
+        <h2>Meet Our Tour Guides</h2>
+        <div class="guides-container">
+            <div class="guide">
+                <img src="https://via.placeholder.com/150x150" alt="Guide 1">
+                <h3>John Mwangi</h3>
+                <p>Born and raised in Kibera, John is passionate about sharing its untold stories.</p>
+            </div>
+            <div class="guide">
+                <img src="https://via.placeholder.com/150x150" alt="Guide 2">
+                <h3>Grace Achieng</h3>
+                <p>Grace loves showcasing Kibera's vibrant culture and community spirit.</p>
+            </div>
+            <div class="guide">
+                <img src="https://via.placeholder.com/150x150" alt="Guide 3">
+                <h3>Peter Omondi</h3>
+                <p>Peter is an expert on Kibera's history and local initiatives.</p>
+            </div>
+            <div class="guide">
+                <img src="https://via.placeholder.com/150x150" alt="Guide 4">
+                <h3>Mary Wanjiku</h3>
+                <p>Mary connects visitors with Kibera's youth and artisans.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Slum Treasures</h3>
+                <p>Discover the heart of Africa with us.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@slumtreasures.com</p>
+                <p>Phone: +254 123 456 789</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Slum Treasures. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-hosting.js"></script>
+    <script src="https://js.intasend.com/checkout/v1/intasend-checkout.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
