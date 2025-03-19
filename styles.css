@@ -11,11 +11,15 @@ body {
     scroll-behavior: smooth;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 /* Navigation Bar */
 .navbar {
     position: sticky;
     top: 0;
-    background-color: #364A60; /* Primary Color */
+    background-color: #364A60;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -44,7 +48,37 @@ body {
 }
 
 .nav-links a:hover {
-    color: #A8A8A8; /* Light Gray */
+    color: #A8A8A8;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Hero Section with YouTube Video */
@@ -89,7 +123,7 @@ body {
 }
 
 .cta-button {
-    background-color: #E46F44; /* Warm Orange */
+    background-color: #E46F44;
     color: #fff;
     padding: 15px 30px;
     text-decoration: none;
@@ -107,13 +141,13 @@ body {
 .tours-section {
     padding: 50px 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: #f9f9f9;
 }
 
 .tours-section h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    color: #364A60; /* Primary Color */
+    color: #364A60;
 }
 
 .card-container {
@@ -130,9 +164,6 @@ body {
 .card {
     flex: 0 0 22%;
     max-width: 22%;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
     overflow: hidden;
     display: flex;
     margin-bottom: 20px;
@@ -147,10 +178,13 @@ body {
 
 .card-image {
     width: 40%;
-    background-color: #364A60; /* Primary Color */
+    background-color: #364A60;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .card-image img {
@@ -165,25 +199,30 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #fff;
 }
 
 .card-content h3 {
     margin: 0;
     font-size: 18px;
-    color: #364A60; /* Primary Color */
+    color: #364A60;
 }
 
 .card-content p {
     margin: 10px 0;
     font-size: 14px;
-    color: #666;
+    color: #333;
     flex-grow: 1;
 }
 
 .card-content .price {
     font-size: 16px;
     font-weight: 600;
-    color: #E46F44; /* Warm Orange */
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 3px;
 }
 
 .card-buttons {
@@ -191,33 +230,238 @@ body {
     gap: 10px;
 }
 
-.card-buttons button, .card-buttons a {
+.card-buttons .book-now,
+.card-buttons .buy-now {
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 14px;
     text-align: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
     border: none;
     cursor: pointer;
-}
-
-.book-now {
-    background-color: #E46F44; /* Warm Orange */
+    background-color: #E46F44;
     color: #fff;
 }
 
-.book-now:hover {
+.card-buttons .book-now:hover,
+.card-buttons .buy-now:hover {
     background-color: #d05a2f;
+    transform: scale(1.05);
 }
 
-.learn-more {
-    background-color: #769ABE; /* Soft Blue */
+.card-buttons .learn-more {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: #769ABE;
     color: #fff;
 }
 
-.learn-more:hover {
-    background-color: #5e8ab5;
+.card-buttons .learn-more:hover {
+    background-color: #5e87b0;
+    transform: scale(1.05);
+}
+
+.show-more {
+    background-color: #E46F44;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 20px auto;
+    display: block;
+}
+
+.show-more:hover {
+    background-color: #d05a2f;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Shop Section */
+.shop-section {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid #364A60;
+    border-bottom: 5px solid #364A60;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.shop-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(54, 74, 96, 0.1), rgba(228, 111, 68, 0.1));
+    z-index: 0;
+}
+
+.shop-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #364A60;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.shop-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+.shop-header {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.shop-highlight {
+    background-color: #364A60;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.shop-highlight:hover {
+    transform: translateY(-5px);
+}
+
+.shop-highlight h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.shop-highlight p {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+}
+
+.shop-section .card.shop-card {
+    flex: 0 0 22%;
+    max-width: 22%;
+    margin-bottom: 20px;
+    border: 2px dashed #E46F44;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shop-section .card.shop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.shop-section .shop-card-image {
+    width: 100%;
+    height: 150px;
+}
+
+.shop-section .shop-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shop-section .shop-card-content {
+    padding: 15px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.shop-section .shop-card-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.shop-section .shop-card-content .rating {
+    margin-bottom: 10px;
+}
+
+.shop-section .shop-card-content .rating span {
+    color: #FFC914;
+    font-size: 14px;
+}
+
+.shop-section .shop-card-content .rating .rating-text {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #666;
+}
+
+.shop-section .shop-card-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.shop-section .shop-card-content .price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.shop-section .shop-card-content .buy-now {
+    background-color: #E46F44;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    text-align: center;
+}
+
+.shop-section .shop-card-content .buy-now:hover {
+    background-color: #d05a2f;
+    transform: scale(1.05);
+}
+
+.shop-section .show-more {
+    background-color: #E46F44;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 20px auto;
+    display: block;
+}
+
+.shop-section .show-more:hover {
+    background-color: #d05a2f;
+    transform: scale(1.05);
 }
 
 /* Tour Guides Section */
@@ -230,7 +474,7 @@ body {
 .guides-section h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    color: #364A60; /* Primary Color */
+    color: #364A60;
 }
 
 .guides-container {
@@ -254,22 +498,22 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #E46F44; /* Warm Orange */
+    border: 3px solid #E46F44;
 }
 
 .guide h3 {
     font-size: 20px;
-    color: #364A60; /* Primary Color */
+    color: #364A60;
 }
 
 .guide p {
     font-size: 14px;
-    color: #666;
+    color: #333;
 }
 
 /* Footer */
 .footer {
-    background-color: #364A60; /* Primary Color */
+    background-color: #364A60;
     color: #fff;
     padding: 40px 20px;
 }
@@ -296,7 +540,7 @@ body {
 }
 
 .social-links a {
-    color: #FFC914; /* Bright Yellow */
+    color: #FFC914;
     text-decoration: none;
     margin: 0 10px;
     font-size: 14px;
@@ -321,23 +565,102 @@ body {
 }
 
 .newsletter-form button {
-    background-color: #E46F44; /* Warm Orange */
+    background-color: #E46F44;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .newsletter-form button:hover {
     background-color: #d05a2f;
+    transform: scale(1.05);
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup.active {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 500px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid #E46F44;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.popup.active .popup-content {
+    transform: translateY(0);
+}
+
+.popup-content h3 {
+    font-size: 24px;
+    color: #364A60;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.popup-content .details-section {
+    margin-bottom: 20px;
+}
+
+.popup-content .details-section h4 {
+    font-size: 18px;
+    color: #E46F44;
+    margin-bottom: 10px;
+}
+
+.popup-content .details-section p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-popup:hover {
+    color: #E46F44;
 }
 
 /* Responsive Design */
@@ -348,12 +671,57 @@ body {
         height: 250px;
     }
 
+    .shop-section .card.shop-card {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+
     .hero-content h1 {
         font-size: 36px;
     }
 
     .hero-content p {
         font-size: 16px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #364A60;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .shop-section h2 {
+        font-size: 32px;
+    }
+
+    .shop-highlight {
+        padding: 15px;
+    }
+
+    .shop-highlight h3 {
+        font-size: 20px;
+    }
+
+    .shop-highlight p {
+        font-size: 14px;
     }
 }
 
@@ -364,13 +732,26 @@ body {
         height: 200px;
     }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
+    .shop-section .card.shop-card {
+        flex: 0 0 90%;
+        max-width: 90%;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .popup-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .shop-section h2 {
+        font-size: 28px;
+    }
+
+    .shop-section p {
+        font-size: 16px;
     }
 }
